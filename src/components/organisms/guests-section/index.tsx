@@ -32,8 +32,6 @@ export default function GuestsSection() {
       `${process.env.NEXT_PUBLIC_DATABASE_ID}`,
       `${process.env.NEXT_PUBLIC_GUEST_COLLECTION_ID}`
     )
-    console.log('RESPONSE:', response)
-
     setGuests(response.documents)
   }
 

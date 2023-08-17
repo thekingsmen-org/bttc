@@ -14,8 +14,8 @@ export default function GuestItem(props: { guest: Guest }) {
       <Image
         src={`${props.guest.photo}`}
         alt={`${props.guest.full_name}`}
-        width={400}
-        height={400}
+        width={300}
+        height={300}
         className="object-cover"
       />
       <div>
