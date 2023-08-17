@@ -2,16 +2,23 @@
 }
 
 .mid-section-anim_gradient {
-  background: linear-gradient(90deg, hsla(298, 68%, 90%, 1) 0%, hsla(30, 82%, 91%, 1) 100%);
-  backgroundSize: "400% 400%";
-  animation: "gradient 25s ease infinite";
-
+  background: linear-gradient(
+    90deg,
+    hsla(298, 68%, 90%, 1) 0%,
+    hsla(30, 82%, 91%, 1) 100%
+  );
+  backgroundsize: '400% 400%';
+  animation: 'gradient 25s ease infinite';
 }
 
 .anim_gradient {
-  background: linear-gradient(315deg, hsla(348, 88%, 66%, 1) 0%, hsla(36, 89%, 68%, 1) 100%);
-  backgroundSize: "400% 400%";
-  animation: "gradient 25s ease infinite";
+  background: linear-gradient(
+    315deg,
+    hsla(348, 88%, 66%, 1) 0%,
+    hsla(36, 89%, 68%, 1) 100%
+  );
+  backgroundsize: '400% 400%';
+  animation: 'gradient 25s ease infinite';
 }
 
 @keyframes gradient {
@@ -25,5 +32,3 @@
     background-position: 0% 50%;
   }
 }
-
-;

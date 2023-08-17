@@ -1,0 +1,6 @@
+.tkm-form-container {
+  @apply flex flex-col items-center justify-center space-y-4 w-auto;
+  .input-container {
+    @apply grid md:grid-cols-2 grid-cols-1 md:gap-x-5 space-y-4 md:space-y-0  w-full md:px-40 px-5;
+  }
+}
