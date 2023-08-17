@@ -1,16 +1,17 @@
 'use client'
 
 import './styles.module.scss'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ContentSection from '@/components/organisms/content-section'
-import { EntrySkeletonType } from 'contentful'
 import { Tab } from '@headlessui/react'
 import GuestItem from '@/components/molecules/guest-item'
 import classnames from 'classnames'
+import { databases } from '@/clients/appwrite'
+import { Guest } from '@/contracts'
 
-export default function GuestsSection(props: {
-  guests: (EntrySkeletonType & { sys: any })[]
-}) {
+export default function GuestsSection() {
+  const [guests, setGuests] = useState<Guest[]>([])
+
   const categories = [
     {
       id: 'speaker',
@@ -21,6 +22,21 @@ export default function GuestsSection(props: {
       title: 'Worship',
     },
   ]
+
+  useEffect(() => {
+    getGuests()
+  }, [])
+
+  const getGuests = async () => {
+    const response = await databases.listDocuments(
+      `${process.env.NEXT_PUBLIC_DATABASE_ID}`,
+      `${process.env.NEXT_PUBLIC_GUEST_COLLECTION_ID}`
+    )
+    console.log('RESPONSE:', response)
+
+    setGuests(response.documents)
+  }
+
   return (
     <ContentSection title="SPECIAL GUESTS" preset="primary">
       <Tab.Group>
@@ -32,9 +48,9 @@ export default function GuestsSection(props: {
                 className={({ selected }) =>
                   classnames(
                     'w-full rounded-lg px-8 py-2.5 text-sm font-medium leading-5 text-gray-700',
-                    'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none',
+                    'ring-white',
                     selected
-                      ? 'bg-white shadow'
+                      ? 'bg-white'
                       : 'text-blue-100 hover:bg-white/[0.12] hover:text-gray-930'
                   )
                 }
@@ -49,17 +65,14 @@ export default function GuestsSection(props: {
             <Tab.Panel
               key={idx}
               className={classnames(
-                'rounded-xl p-3 grid grid-cols-3 grid-flow-col gap-4',
-                'min-w-full w-full px-24'
+                'rounded-xl p-3 grid md:grid-cols-3 grid-cols-1 grid-flow-col gap-4',
+                'min-w-full w-full md:px-24 px-16'
               )}
             >
-              {props.guests
-                .filter((value) => value.fields.kind === cat.id)
-                .map((value) => (
-                  <GuestItem
-                    key={value.sys.id}
-                    guest={{ ...value.fields, id: value.sys.id } as any}
-                  />
+              {guests
+                .filter((value) => value.kind === cat.id)
+                .map((guest) => (
+                  <GuestItem key={guest.$id} guest={{ ...guest }} />
                 ))}
             </Tab.Panel>
           ))}

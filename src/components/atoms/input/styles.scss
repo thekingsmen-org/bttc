@@ -1,0 +1,10 @@
+.tkm-input {
+  .input-wrapper {
+    @apply flex items-center justify-between dark:text-gray-900;
+
+    .inner-input-wrapper {
+      background: transparent;
+      @apply w-full px-3 dark:text-gray-100 border-transparent focus:border-transparent focus:ring-0;
+    }
+  }
+}

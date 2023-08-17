@@ -1,14 +1,14 @@
 import HeroSection from '@/components/organisms/hero-section'
 import MidSection from '@/components/organisms/mid-section'
 import GuestsSection from '@/components/organisms/guests-section'
-import AboutSection from '@/components/organisms/about-section'
+import VideoSection from '@/components/organisms/video-section'
 
-export default function HomeFragment(props: { guests: any[] }) {
+export default function HomeFragment() {
   return (
     <div className="h-full w-full">
       <HeroSection />
-      <AboutSection />
-      <GuestsSection guests={props.guests} />
+      <VideoSection />
+      <GuestsSection />
       <MidSection />
     </div>
   )

@@ -1,0 +1,12 @@
+.tkm-button {
+  &.button-wrapper {
+    outline: none;
+    box-shadow: none;
+    @apply flex items-center justify-between outline-none;
+    @apply transition ease-in-out delay-200 transform-gpu;
+  }
+
+  .inner-button-wrapper {
+    @apply flex-1 flex justify-center;
+  }
+}
