@@ -18,10 +18,10 @@ export default function TopNavigation() {
           >
             Work
           </Link>
-          <div className='md:block hidden'>
-          <Link href="/about" className="btn btn-ghost normal-case text-base">
-            About
-          </Link>
+          <div className="md:block hidden">
+            <Link href="/about" className="btn btn-ghost normal-case text-base">
+              About
+            </Link>
           </div>
         </div>
         <div className="flex-none">

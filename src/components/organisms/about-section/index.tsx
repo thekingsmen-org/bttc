@@ -8,7 +8,7 @@ import { Blockquote } from '@mantine/core'
 export default function AboutSection() {
   return (
     <ContentSection title="ABOUT" preset="primary">
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center px-3 md:px-o">
         <article className="prose text-black">
           <h4 className="font-black text-center text-black">
             WHO ARE THE KINGS MEN

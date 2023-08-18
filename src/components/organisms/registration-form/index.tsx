@@ -46,7 +46,7 @@ export default function RegistrationForm() {
 
   return (
     <>
-      <h1 className="text-sm md:text-2xl text-center pb-4">
+      <h1 className="text-base md:text-2xl text-center pb-4">
         Please fill out this form to register for the event
       </h1>
       <form onSubmit={onSubmit} className="tkm-form-container">
