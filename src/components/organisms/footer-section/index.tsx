@@ -4,7 +4,11 @@ import classnames from 'classnames'
 
 export default function FooterSection() {
   return (
-    <footer className={classnames('w-full h-1/2 p-8 flex flex-col bg-black')}>
+    <footer
+      className={classnames(
+        'w-full h-1/2 p-8 flex flex-col bg-black justify-center'
+      )}
+    >
       <div className="grid md:grid-cols-3 grid-cols-1 h-full">
         <div className="text-white space-y-5">
           <h2 className=" md:text-2xl text-lg font-black text-center self-start">
