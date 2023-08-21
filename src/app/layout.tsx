@@ -1,12 +1,9 @@
-'use client'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { ServerThemeProvider } from 'next-themes'
 import TopNavigation from '@/components/organisms/top-navigation'
 import ThemerProvider from '@/components/providers'
 import FooterSection from '@/components/organisms/footer-section'
-import HamburgerMenu from '@/components/organisms/hamburger-menu'
-import { useState } from 'react'
 
 const inter = Inter({ subsets: ['latin'] })
 
