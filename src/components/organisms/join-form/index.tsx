@@ -9,11 +9,12 @@ import Button from '@/components/atoms/button'
 import Toaster from '@/components/atoms/toaster'
 import './styles.scss'
 
-export default function RegistrationForm() {
+export default function JoinForm() {
   const [formData, setFormData] = useState([])
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
 
   async function onSubmit(e: any) {
     e.preventDefault()
@@ -22,20 +23,27 @@ export default function RegistrationForm() {
       first_name: firstName,
       last_name: lastName,
       email: email,
+      phone: phone,
     }
 
     try {
       let response = await databases.createDocument(
         `${process.env.NEXT_PUBLIC_DATABASE_ID}`,
-        `${process.env.NEXT_PUBLIC_ATTENDANCE_COLLECTION_ID}`,
+        `${process.env.NEXT_PUBLIC_MEMBERSHIP_COLLECTION_ID}`,
         ID.unique(),
         payload
       )
 
-      toast.success('Your details has been submitted successfully')
+      toast.success(
+        'Your details has been submitted successfully, Thanks for joining!',
+        {
+          duration: 4000,
+        }
+      )
       setFirstName('')
       setLastName('')
       setEmail('')
+      setPhone('')
     } catch (err) {
       toast.error(
         'An error occurred while submitting the form, please try again'
@@ -46,7 +54,7 @@ export default function RegistrationForm() {
   return (
     <>
       <h1 className="text-base md:text-2xl text-center pb-4">
-        Please fill out this form to register for the event
+        Do you want to be a part of The Kings Men? please fill this form
       </h1>
       <form onSubmit={onSubmit} className="tkm-form-container">
         <div className="input-container">
@@ -65,7 +73,7 @@ export default function RegistrationForm() {
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
-        <div className="w-full md:px-40 px-5">
+        <div className="input-container">
           <Input
             value={email}
             type="email"
@@ -73,9 +81,16 @@ export default function RegistrationForm() {
             placeholder="Email"
             onChange={(e) => setEmail(e.target.value)}
           />
+          <Input
+            value={phone}
+            type="text"
+            required
+            placeholder="Phone"
+            onChange={(e) => setPhone(e.target.value)}
+          />
         </div>
         <Button color="bg-gray-950 w-80" textColor="text-white" type="submit">
-          Register
+          Join
         </Button>
       </form>
       <Toaster />

@@ -3,9 +3,12 @@ import HamburgerMenu from '@/components/organisms/hamburger-menu'
 import { useState } from 'react'
 import Link from 'next/link'
 import './styles.scss'
+import { navigationLinks } from '@/constants/navigation-data'
+import { usePathname } from 'next/navigation'
 
 export default function TopNavigation() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="w-full sticky top-0">
@@ -19,9 +22,17 @@ export default function TopNavigation() {
             Work
           </Link>
           <div className="md:block hidden">
-            <Link href="/about" className="btn btn-ghost normal-case text-base">
-              About
-            </Link>
+            {navigationLinks.map((link, index) => (
+              <Link
+                key={index}
+                className={`mx-3 normal-case text-base hover:border-b-4 border-black ${
+                  pathname == link.path && ' border-b-4 border-black'
+                }`}
+                href={`${link.path}`}
+              >
+                {link.name}
+              </Link>
+            ))}
           </div>
         </div>
         <div className="flex-none">
@@ -47,7 +58,7 @@ export default function TopNavigation() {
               />
               <span
                 className={`h-1 w-full bg-black rounded-lg group-hover:text-red-500 cursor-pointer transition-all duration-300 ease-in-out ${
-                  open ? 'w-0' : 'w-full'
+                  open ? 'w-1' : 'w-full'
                 }`}
               />
               <span

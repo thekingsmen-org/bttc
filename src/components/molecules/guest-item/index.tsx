@@ -16,7 +16,7 @@ export default function GuestItem(props: { guest: Guest }) {
         alt={`${props.guest.full_name}`}
         width={300}
         height={300}
-        className="object-cover"
+        className="object-cover rounded-xl"
       />
       <div>
         <h1 className="text-lg font-bold tracking-wide text-center">

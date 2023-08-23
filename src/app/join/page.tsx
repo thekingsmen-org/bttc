@@ -1,8 +1,10 @@
+import JoinFragment from '@/fragments/join-fragment'
+
 export const metadata = {
-  title: 'Attend | Kings Men',
+  title: 'Join | Kings Men',
   description: 'see all activity metrics for your team',
 }
 
 export default function JoinPage() {
-  return <main className="flex items-center justify-between">Join</main>
+  return <JoinFragment />
 }

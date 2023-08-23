@@ -1,3 +1,5 @@
+import { Url } from 'next/dist/shared/lib/router/router'
+
 export interface Guest {
   $collectionId?: string
   $createdAt?: string
@@ -14,4 +16,9 @@ export interface Guest {
   website?: string
   kind?: 'speaker' | 'singer'
   ministry?: string
+}
+
+export interface NavItemContract {
+  name: String
+  path?: String
 }
