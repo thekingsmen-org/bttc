@@ -58,7 +58,7 @@ export default function TopNavigation() {
               />
               <span
                 className={`h-1 w-full bg-black rounded-lg group-hover:text-red-500 cursor-pointer transition-all duration-300 ease-in-out ${
-                  open ? 'w-1' : 'w-full'
+                  open ? 'w-10 hidden' : 'w-full'
                 }`}
               />
               <span

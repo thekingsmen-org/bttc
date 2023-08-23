@@ -45,7 +45,7 @@ export default function EventSection() {
               December 12th - 15th, 2023. <br />
               <span className="text-sm font-normal text-gray-700">
                 {' '}
-                Doors Open at 3:30pm GMT.
+                Doors Open at 3:30pm GMT +1.
               </span>
             </p>
           </div>
