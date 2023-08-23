@@ -9,4 +9,5 @@ export const mobileNavigationLinks: NavItemContract[] = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Event', path: '/event' },
+  { name: 'Join', path: '/join' },
 ]
