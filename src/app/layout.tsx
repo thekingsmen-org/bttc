@@ -1,9 +1,10 @@
-import './globals.css'
 import { Inter } from 'next/font/google'
 import { ServerThemeProvider } from 'next-themes'
 import TopNavigation from '@/components/organisms/top-navigation'
 import ThemerProvider from '@/components/providers'
 import FooterSection from '@/components/organisms/footer-section'
+import './globals.css'
+// import '@radix-ui/themes/styles.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,7 @@ export default function RootLayout({
       <html lang="en">
         <body suppressHydrationWarning={true} className={`${inter.className}`}>
           <ThemerProvider>
-            <div className="app-default-layout">
+            <div id="app-root" className="app-default-layout overflow-x-hidden">
               <TopNavigation />
               {children}
               <FooterSection />

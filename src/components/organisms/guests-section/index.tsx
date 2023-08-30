@@ -3,7 +3,6 @@
 import './styles.module.scss'
 import React, { useEffect, useState } from 'react'
 import ContentSection from '@/components/organisms/content-section'
-import { Tab } from '@headlessui/react'
 import GuestItem from '@/components/molecules/guest-item'
 import classnames from 'classnames'
 import { databases } from '@/clients/appwrite'
@@ -16,6 +15,10 @@ export default function GuestsSection() {
     {
       id: 'speaker',
       title: 'Speaker',
+    },
+    {
+      id: 'divider',
+      title: 'Divider',
     },
     {
       id: 'singer',
@@ -36,46 +39,33 @@ export default function GuestsSection() {
   }
 
   return (
-    <ContentSection title="SPECIAL GUESTS" preset="primary">
-      <Tab.Group>
-        <div className="flex justify-center w-full">
-          <Tab.List className="flex max-w-md space-x-1 rounded-xl bg-primary p-1">
-            {Object.values(categories).map((category) => (
-              <Tab
-                key={category.id}
-                className={({ selected }) =>
-                  classnames(
-                    'w-full rounded-lg px-8 py-2.5 text-sm font-medium leading-5 text-gray-700',
-                    'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none',
-                    selected
-                      ? 'bg-white shadow'
-                      : 'text-blue-100 hover:bg-white/[0.12] hover:text-gray-930'
-                  )
-                }
-              >
-                {category.title}
-              </Tab>
-            ))}
-          </Tab.List>
-        </div>
-        <Tab.Panels className="mt-2 min-w-full w-screen max-h-fit">
-          {Object.values(categories).map((cat, idx) => (
-            <Tab.Panel
-              key={idx}
+    <ContentSection preset="black" withGradient>
+      <div>
+        <div className="flex items-center justify-center flex-col space-y-9 my-32">
+          <div className="flex items-center justify-center max-w-2xl">
+            <p
               className={classnames(
-                'rounded-xl p-3 grid md:grid-cols-3 grid-cols-1 grid-flow-col gap-4',
-                'min-w-full w-full md:px-24 px-16'
+                'text-xs font-extrabold text-gray-100 font-sans tracking-widest'
               )}
             >
-              {guests
-                .filter((value) => value.kind === cat.id)
-                .map((guest) => (
-                  <GuestItem key={guest.$id} guest={{ ...guest }} />
-                ))}
-            </Tab.Panel>
+              OUR SPEAKERS, GOSPEL ARTIST AND CHOIR
+            </p>
+          </div>
+          <h1
+            className={classnames(
+              "leading-3 font-['Inter'] text-white text-5xl md:text-5xl lg:text-7xl",
+              'font-black max-w-7xl text-center tracking-widest main-header-text'
+            )}
+          >
+            SPECIAL GUEST
+          </h1>
+        </div>
+        <div className={classnames('min-w-full w-full')}>
+          {guests.map((guest, index) => (
+            <GuestItem key={guest.$id} index={index} guest={{ ...guest }} />
           ))}
-        </Tab.Panels>
-      </Tab.Group>
+        </div>
+      </div>
     </ContentSection>
   )
 }

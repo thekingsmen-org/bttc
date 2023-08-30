@@ -1,10 +1,13 @@
 'use client'
 import Link from 'next/link'
 import './styles.scss'
-import React, { useState } from 'react'
+import React from 'react'
 import { usePathname } from 'next/navigation'
 import { mobileNavigationLinks } from '@/constants/navigation-data'
-import classNames from 'classnames'
+import { Inter } from 'next/font/google'
+import classnames from 'classnames'
+
+const inter = Inter({ subsets: ['latin'] })
 
 interface HamburgerProps {
   open: boolean
@@ -14,6 +17,8 @@ interface HamburgerProps {
 export default function HamburgerMenu(props: HamburgerProps) {
   const pathname = usePathname()
 
+  if (!props.open) return <div></div>
+
   return (
     <div
       className={`absolute top-0 left-0 h-screen w-screen bg-primary transform ${
@@ -21,15 +26,19 @@ export default function HamburgerMenu(props: HamburgerProps) {
       } transition-transform duration-500 ease-in-out filter  `}
     >
       <div
-        className="flex flex-col justify-center items-center mt-28  space-y-4"
+        className="h-full w-full flex flex-col justify-center items-center mt-28  space-y-10"
         onClick={() => props.setOpen(false)}
       >
         {mobileNavigationLinks.map((link, index) => (
           <Link
             key={index}
-            className={`text-2xl font-bold ${
-              pathname == link.path && ' border-b-4 border-black'
-            }`}
+            className={classnames(
+              'text-5xl font-bold uppercase tracking-widest',
+              inter.className,
+              {
+                'border-b-8 border-black': pathname === link.path,
+              }
+            )}
             href={`${link.path}`}
           >
             {link.name}

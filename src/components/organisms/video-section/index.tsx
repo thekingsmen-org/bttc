@@ -1,9 +1,10 @@
 import './styles.module.scss'
-import React, { useRef } from 'react'
+import React from 'react'
+import ContentSection from '@/components/organisms/content-section'
 
 export default function VideoSection() {
   return (
-    <div className="bg-primary pb-4">
+    <ContentSection preset="primary">
       <div className=" bg-gray-500 md:h-[600px] h-72 rounded-xl md:mx-24 mx-2">
         <iframe
           className="h-full w-full rounded-xl"
@@ -11,6 +12,6 @@ export default function VideoSection() {
           allow="autoplay"
         ></iframe>
       </div>
-    </div>
+    </ContentSection>
   )
 }

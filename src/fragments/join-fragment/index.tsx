@@ -1,12 +1,13 @@
 import JoinForm from '@/components/organisms/join-form'
 import './styles.scss'
+import ContentSection from '@/components/organisms/content-section'
 
 export default function JoinFragment() {
   return (
-    <div className="join-section">
+    <ContentSection preset="primary">
       <div className="md:space-y-9 space-y-4 w-full">
         <JoinForm />
       </div>
-    </div>
+    </ContentSection>
   )
 }
