@@ -26,7 +26,7 @@ export default function GuestsSection() {
   return (
     <ContentSection preset="black" withGradient>
       <div>
-        <div className="flex items-center justify-center flex-col space-y-9 my-32">
+        <div className="flex items-center justify-center flex-col space-y-9 md:my-32">
           <div className="flex items-center justify-center max-w-2xl">
             <p
               className={classnames(
