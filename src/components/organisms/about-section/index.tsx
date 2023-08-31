@@ -11,18 +11,18 @@ export default function AboutSection() {
   return (
     <>
       <ContentSection preset="primary">
-        <div className="grid sm:grid-cols-1 md:grid-cols-4 grid-cols-1 grid-flow-col gap-0 justify-center items-center px-3 md:px-8 lg:px-8">
-          <div className="col-span-4 md:col-span-1 lg:col-span-1 flex justify-center items-center h-full">
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-0 justify-center items-center px-3 md:px-8 lg:px-8">
+          <div className="md:col-span-1 flex justify-center items-center h-full pb-10 md:pb-0">
             <Heading
               className={classnames(
-                "leading-3 font-['Inter'] text-7xl md:text-7xl lg:text-7xl",
-                'font-black max-w-7xl md:whitespace-break-spaces text-left tracking-widest main-header-text'
+                "md:leading-3 font-['Inter'] text-4xl md:text-7xl lg:text-7xl",
+                'font-black max-w-7xl md:whitespace-break-spaces text-center md:text-left tracking-widest main-header-text'
               )}
             >
               WHO ARE THE KINGS MEN
             </Heading>
           </div>
-          <div className="col-span-3 flex items-center">
+          <div className="md:col-span-3 flex items-center">
             <article className="prose text-black">
               <p>
                 Before explaining who the King&apos;s Men are, we need to first
@@ -71,8 +71,8 @@ export default function AboutSection() {
       </ContentSection>
 
       <ContentSection preset="cyan">
-        <div className="grid md:grid-cols-4 grid-cols-1 grid-flow-col gap-0 justify-center items-center px-3 md:px-8 lg:px-8">
-          <div className="col-span-3 flex items-center justify-end">
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-0 justify-center items-center px-3 md:px-8 lg:px-8">
+          <div className="md:col-span-3 order-last md:order-first flex items-center justify-end">
             <article className="prose text-black">
               <p>
                 Before explaining who the King&apos;s Men are, we need to first
@@ -117,11 +117,11 @@ export default function AboutSection() {
               </Blockquote>
             </article>
           </div>
-          <div className="col-span-1 flex justify-center items-center h-full">
+          <div className="col-span-1 order-first md:order-last flex justify-center items-center h-full pb-10 md:pb-0">
             <Heading
               as="h1"
               className={classnames(
-                "leading-1 font-['Inter'] text-7xl md:text-7xl lg:text-7xl",
+                "md:leading-3 font-['Inter'] text-4xl md:text-7xl lg:text-7xl",
                 'font-black max-w-7xl whitespace-break-spaces text-center tracking-widest main-header-text'
               )}
             >
@@ -132,12 +132,12 @@ export default function AboutSection() {
       </ContentSection>
 
       <ContentSection preset="white">
-        <div className="grid md:grid-cols-4 grid-cols-1 grid-flow-col gap-0 justify-center items-center px-3 md:px-8 lg:px-8">
-          <div className="col-span-1 flex justify-center items-center h-full">
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-0 justify-center items-center px-3 md:px-8 lg:px-8">
+          <div className="md:col-span-1 flex justify-center items-center h-full pb-10 md:pb-0">
             <Heading
               className={classnames(
-                "leading-3 font-['Inter'] text-7xl md:text-7xl lg:text-7xl",
-                'font-black max-w-7xl whitespace-break-spaces text-left tracking-widest main-header-text'
+                "md:leading-3 font-['Inter'] text-4xl md:text-7xl lg:text-7xl",
+                'font-black max-w-7xl md:whitespace-break-spaces text-center md:text-left tracking-widest main-header-text'
               )}
             >
               WHO ARE THE KINGS MEN

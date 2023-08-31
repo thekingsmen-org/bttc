@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function EventSection() {
   return (
     <ContentSection preset="black" noPadding>
-      <div className="grid grid-flow-row-dense  md:grid-cols-4 gap-2 grid-cols-1">
+      <div className="grid grid-flow-row-dense md:grid-cols-4 gap-2 grid-cols-1">
         <div className="col-span-2 flex  flex-col space-y-5 md:mt-0 mt-8 py-10 pl-10">
           <div className="flex flex-col justify-center">
             <span className="text-xs uppercase text-gray-50">Event center</span>
