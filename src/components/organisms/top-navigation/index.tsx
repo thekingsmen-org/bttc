@@ -149,7 +149,7 @@ export default function TopNavigation() {
                 info.color,
                 {
                   'text-sm': scroll.scrolled,
-                  'text-xl': !scroll.scrolled,
+                  'text-lg': !scroll.scrolled,
                 }
               )}
             >

@@ -21,13 +21,13 @@ export default function HeroSection() {
       {/*    <div className="absolute inset-0 z-20 bg-gradient-to-b from-white dark:hidden" />*/}
       {/*  </div>*/}
       {/*</section>*/}
-      <div className="flex justify-between items-center w-full max-w-4xl">
+      <div className="flex justify-between items-center w-full max-w-4xl mt-24">
         <h2 className="font-semibold text-md">Yenagoa, BY</h2>
         <h2 className="text-md font-semibold">MMXXIII</h2>
         <h2 className="text-md font-semibold">DEC 12th - 15th</h2>
       </div>
       <h1 className="font-['Inter'] mt-32 text-black text-7xl md:text-7xl lg:text-9xl font-black max-w-7xl text-center tracking-widest main-header-text">
-        BACK TO THE CROSS
+        THE CROSS <span className="bg-black text-white">CONFERENCE</span> 2023
       </h1>
       <div className="flex items-center justify-center max-w-2xl">
         <p className="text-lg text-center">

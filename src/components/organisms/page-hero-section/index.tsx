@@ -112,7 +112,7 @@ function PageHeroSection(props: PageHeroSectionProps) {
         </div>
         <h1
           className={classnames(
-            "leading-3 font-['Inter'] mt-32 text-5xl md:text-5xl lg:text-7xl",
+            "leading-3 font-['Inter'] mt-32 text-4xl md:text-5xl lg:text-7xl",
             'font-black max-w-7xl text-center tracking-widest main-header-text',
             info.color,
             inter.className
