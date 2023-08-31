@@ -30,13 +30,15 @@ export default function HeroSection() {
         THE CROSS <span className="bg-black text-white">CONFERENCE</span> 2023
       </h1>
       <div className="flex items-center justify-center max-w-2xl">
-        <p className="text-lg text-center">
-          A call to repentance and faith in Jesus -
+        <span>
+          <p className="text-lg text-center">
+            A call to repentance and faith in Jesus -
+          </p>
           <blockquote>
             “The time is fulfilled, and the kingdom of God is at hand; repent
             and believe in the gospel.” - Mark 1:15
           </blockquote>
-        </p>
+        </span>
       </div>
       <div className="flex items-center justify-center max-w-2xl space-x-3">
         <Link

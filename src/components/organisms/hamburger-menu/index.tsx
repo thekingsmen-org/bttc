@@ -21,7 +21,7 @@ export default function HamburgerMenu(props: HamburgerProps) {
 
   return (
     <div
-      className={`absolute top-0 left-0 h-screen w-screen bg-primary transform ${
+      className={`absolute top-0 bottom-0 left-0 h-screen w-screen bg-primary transform ${
         props.open ? '-translate-y-0' : '-translate-y-full'
       } transition-transform duration-500 ease-in-out filter  `}
     >
