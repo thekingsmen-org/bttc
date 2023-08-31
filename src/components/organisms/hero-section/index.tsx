@@ -34,7 +34,7 @@ export default function HeroSection() {
           <p className="text-lg text-center">
             A call to repentance and faith in Jesus -
           </p>
-          <blockquote>
+          <blockquote className="text-lg text-center">
             “The time is fulfilled, and the kingdom of God is at hand; repent
             and believe in the gospel.” - Mark 1:15
           </blockquote>
