@@ -38,7 +38,7 @@ export default function GuestsSection() {
           </div>
           <h1
             className={classnames(
-              "leading-3 font-['Inter'] text-white text-5xl md:text-5xl lg:text-7xl",
+              "md:leading-3 font-['Inter'] text-white text-5xl md:text-5xl lg:text-7xl",
               'font-black max-w-7xl text-center tracking-widest main-header-text'
             )}
           >
