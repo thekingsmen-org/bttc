@@ -1,22 +1,54 @@
 'use client'
 
-import './styles.module.scss'
 import React, { useState } from 'react'
 import { Guest } from '@/contracts'
 import Image from 'next/image'
-import { Cross1Icon, PlusIcon } from '@radix-ui/react-icons'
 import classnames from 'classnames'
+import './styles.module.scss'
 
 export default function GuestItem(props: { guest: Guest; index: number }) {
   const [show, setShow] = useState(false)
 
   const even = isEven(props.index)
-  const csLeft = even ? '' : ''
-  const csRight = even ? '' : ''
+  const csLeft = even
+    ? 'sm:order-first xs:order-first'
+    : 'xs:order-last sm:order-last'
+  const csRight = even
+    ? 'order-last md:order-first'
+    : 'order-first md:order-last'
   const imageCs = even ? 'rounded-tr-[120px]' : 'rounded-tl-[120px]'
   const imageWrapperCs = even
-    ? 'pl-3 md:pl-20 lg:pl-40'
-    : 'pr-3 md:pr-20 lg:pr-40'
+    ? 'pl-0 md:pl-20 lg:pl-40'
+    : 'pr-0 md:pr-20 lg:pr-40'
+  const imageWrapperInvertedCs = !even
+    ? 'pl-0 md:pl-20 lg:pl-40'
+    : 'pr-0 md:pr-20 lg:pr-40'
+
+  const ItemLink = ({ name, link }: { name: string; link: string }) => (
+    <a
+      href={link}
+      target="_blank"
+      className="btn btn-sm group btn-outline hover:bg-white border-white transition-all duration-500 ease-in-out"
+    >
+      <span className="text-white group-hover:text-black">{name}</span>
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 15 15"
+        fill="none"
+        className="text-white group-hover:text-black hidden group-hover:block  scale-0 group-hover:scale-100 transition-all duration-500 ease-in-out"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+        ></path>
+      </svg>
+    </a>
+  )
+
   // min-w-lg max-w-lg
   const UserImage = () => (
     <div className={imageWrapperCs}>
@@ -27,7 +59,7 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
         height={600}
         className={classnames(
           'drop-shadow-2xl backdrop-blur-lg shadow-2xl min-h-[80vh] w-full object-cover',
-          'border-8 border-primary/30 border-solid',
+          'border-8 border-primary/20 border-solid',
           imageCs
         )}
       />
@@ -35,35 +67,59 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
   )
 
   const UserInfo = () => (
-    <div>
-      <div>
-        <h1 className="text-lg text-white font-bold tracking-wide text-center">
-          {props.guest.full_name}
-        </h1>
-        <h3 className="text-md text-white font-medium tracking-wide text-center">
+    <div
+      className={classnames(imageWrapperInvertedCs, 'text-gray-100 space-y-7')}
+    >
+      <div className="">
+        <h3
+          className={classnames(
+            'text-sm uppercase bg-white w-fit px-10 font-semibold text-black tracking-wide',
+            {
+              'text-right float-right': !even,
+              'text-left': even,
+            }
+          )}
+        >
           {props.guest.ministry}
         </h3>
       </div>
-      <div
-        onClick={() => setShow(!show)}
-        className="flex flex-col justify-center items-center cursor-pointer"
-      >
-        <p className="text-md font-black">
-          {!show ? <PlusIcon /> : <Cross1Icon />}
-        </p>
-        <p className="text-xs font-light">
-          {!show && props.guest.kind === 'speaker'
-            ? 'ABOUT SPEAKER'
-            : props.guest.kind === 'singer'
-            ? 'ABOUT SINGER'
-            : 'CLOSE'}
-        </p>
+      <div>
+        <h1
+          className={classnames(
+            "md:leading-3 font-['Inter'] text-5xl md:text-5xl lg:text-7xl",
+            'font-black max-w-7xl tracking-widest main-header-text',
+            {
+              'text-right': !even,
+              'text-left': even,
+            }
+          )}
+        >
+          {props.guest.full_name}
+        </h1>
       </div>
+      <div
+        className={classnames('flex flex-row space-x-2 items-center', {
+          'justify-end': !even,
+        })}
+      >
+        {props.guest.facebook_url && (
+          <ItemLink name="Facebook" link={props.guest.facebook_url} />
+        )}
+        {props.guest.instagram_url && (
+          <ItemLink name="Instagram" link={props.guest.instagram_url} />
+        )}
+        {props.guest.website && (
+          <ItemLink name="Website" link={props.guest.website} />
+        )}
+      </div>
+      <article className="prose flex flex-col justify-center items-center">
+        <p className="text-white font-light">{props.guest.bio}</p>
+      </article>
     </div>
   )
 
   return (
-    <div className="w-full min-h-[90vh] grid md:grid-cols-2 grid-cols-1 grid-flow-col gap-0">
+    <div className="w-full min-h-[90vh] py-10 grid md:grid-cols-2 grid-cols-1 gap-4 px-8 md:p-0">
       <div
         className={classnames(
           'w-full min-h-full flex flex-col justify-center items-center space-y-4',

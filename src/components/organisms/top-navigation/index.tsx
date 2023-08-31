@@ -6,8 +6,11 @@ import { navigationLinks } from '@/constants/navigation-data'
 import { usePathname } from 'next/navigation'
 import classnames from 'classnames'
 import { Squeeze as Hamburger } from 'hamburger-react'
+import { Monoton } from 'next/font/google'
 
 import './styles.scss'
+
+const monoton = Monoton({ weight: '400', subsets: ['latin'] })
 
 function useScrollListener() {
   const [scrolled, setScrolled] = useState(false)
@@ -108,16 +111,17 @@ export default function TopNavigation() {
             <Link
               href="/"
               className={classnames(
-                'font-bold normal-case ',
+                'font-medium normal-case ',
                 animTrans,
                 info.color,
+                monoton.className,
                 {
                   'text-sm': scroll.scrolled,
                   'text-xl': !scroll.scrolled,
                 }
               )}
             >
-              The cross conference
+              Cross Conf
             </Link>
             <div className="md:block hidden">
               {navigationLinks.map((link, index) => (

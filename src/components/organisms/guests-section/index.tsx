@@ -11,21 +11,6 @@ import { Guest } from '@/contracts'
 export default function GuestsSection() {
   const [guests, setGuests] = useState<Guest[]>([])
 
-  const categories = [
-    {
-      id: 'speaker',
-      title: 'Speaker',
-    },
-    {
-      id: 'divider',
-      title: 'Divider',
-    },
-    {
-      id: 'singer',
-      title: 'Worship',
-    },
-  ]
-
   useEffect(() => {
     getGuests()
   }, [])

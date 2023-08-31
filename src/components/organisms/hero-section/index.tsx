@@ -31,9 +31,11 @@ export default function HeroSection() {
       </h1>
       <div className="flex items-center justify-center max-w-2xl">
         <p className="text-lg text-center">
-          We live in precarious times, men and women deceiving others and being
-          deceived, but God calls his remnant to be faithful and bold in faith
-          proclaiming Christ and Him crucified to all men.
+          A call to repentance and faith in Jesus -
+          <blockquote>
+            “The time is fulfilled, and the kingdom of God is at hand; repent
+            and believe in the gospel.” - Mark 1:15
+          </blockquote>
         </p>
       </div>
       <div className="flex items-center justify-center max-w-2xl space-x-3">
