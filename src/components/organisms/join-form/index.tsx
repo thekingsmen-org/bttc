@@ -15,6 +15,7 @@ export default function JoinForm() {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
+  const [bio, setBio] = useState('')
 
   async function onSubmit(e: any) {
     e.preventDefault()
@@ -24,6 +25,7 @@ export default function JoinForm() {
       last_name: lastName,
       email: email,
       phone: phone,
+      bio: bio
     }
 
     try {
@@ -44,6 +46,7 @@ export default function JoinForm() {
       setLastName('')
       setEmail('')
       setPhone('')
+      setBio('')
     } catch (err) {
       toast.error(
         'An error occurred while submitting the form, please try again'
@@ -87,6 +90,15 @@ export default function JoinForm() {
             required
             placeholder="Phone"
             onChange={(e) => setPhone(e.target.value)}
+            />
+        </div>
+        <div className='md:px-40 px-5 w-full'>
+          <textarea
+            value={bio}
+            required
+            onChange={(e) => setBio(e.target.value)}
+            className='w-full h-28 bg-white rounded-md border border-gray-200 focus:border-gray-200 focus:bg-white focus:ring-0 text-gray-800'
+            placeholder='A short bio'
           />
         </div>
         <Button color="bg-gray-950 w-80" textColor="text-white" type="submit">

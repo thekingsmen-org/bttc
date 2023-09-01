@@ -23,10 +23,10 @@ export default function HamburgerMenu(props: HamburgerProps) {
     <div
       className={`absolute top-0 bottom-0 left-0 h-screen w-screen bg-primary transform ${
         props.open ? '-translate-y-0' : '-translate-y-full'
-      } transition-transform duration-500 ease-in-out filter  `}
+      } transition-transform duration-500 ease-in-out filter`}
     >
       <div
-        className="h-full w-full flex flex-col justify-center items-center mt-28  space-y-10"
+        className="h-screen w-full flex flex-col items-center mt-64 space-y-10"
         onClick={() => props.setOpen(false)}
       >
         {mobileNavigationLinks.map((link, index) => (

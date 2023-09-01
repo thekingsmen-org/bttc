@@ -18,6 +18,21 @@ export interface Guest {
   ministry?: string
 }
 
+export interface Member {
+  $createdAt?: string
+  $id?: string
+  $updatedAt?: string
+  first_name?: string
+  last_name?: string
+  email?: string
+  phone?: string
+  bio?: string
+  approved?: boolean
+  photo?: string
+  title?: string
+  denomination?: string
+}
+
 export interface NavItemContract {
   name: String
   path?: String

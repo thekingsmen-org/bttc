@@ -1,17 +1,31 @@
 'use client'
 
 import './styles.module.scss'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ContentSection from '@/components/organisms/content-section'
 import MemberItem from '@/components/molecules/member-item'
 import { Inter } from 'next/font/google'
 import classnames from 'classnames'
+import { Member } from '@/contracts'
+import { databases } from '@/clients/appwrite'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const people = [{}, {}, {}, {}, {}, {}]
-
 export default function PeopleSection() {
+  const [people, setPeople] = useState<Member[]>([])
+
+  useEffect(() => {
+    getMembers()
+  }, [])
+
+  const getMembers = async () => {
+    const response = await databases.listDocuments(
+      `${process.env.NEXT_PUBLIC_DATABASE_ID}`,
+      `${process.env.NEXT_PUBLIC_MEMBERSHIP_COLLECTION_ID}`
+    )
+    setPeople(response.documents)
+  }
+
   return (
     <ContentSection preset="primary">
       <section>
@@ -35,9 +49,9 @@ export default function PeopleSection() {
           </div>
 
           <ul className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
-            {people.map((p, i) => (
+            {people.map((person, i) => (
               <li key={i}>
-                <MemberItem />
+                <MemberItem member={{...person}} />
               </li>
             ))}
           </ul>
