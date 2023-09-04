@@ -176,8 +176,8 @@ export default function AboutSection() {
               <p>
                 We accommodate all 3 eschatological view point such as{' '}
                 <strong>Premillennialism</strong>,{' '}
-                <strong>Postmillennialism</strong> and
-                <strong>Amillennialism</strong> as it is not a salvation issue.,
+                <strong>Postmillennialism</strong> and{' '}
+                <strong>Amillennialism</strong> as it is not a salvation issue,
                 though as an organisation we believe{' '}
                 <strong>Premillennialism</strong> to be correct theology on
                 Eschatology.
