@@ -4,10 +4,13 @@ import React from 'react'
 import { Member } from '@/contracts'
 import classNames from 'classnames'
 
-
 export default function MemberItem(props: { member?: Member }) {
   return (
-    <a href="#" className={classNames("group relative block bg-black", props.member?.approved ? 'block' : 'hidden')}>
+    <div
+      className={classNames(
+        'group cursor-pointer relative flex-1 block bg-black max-h-[490px]'
+      )}
+    >
       <img
         alt={`${props.member?.first_name}`}
         src={`${props.member?.photo}`}
@@ -19,17 +22,19 @@ export default function MemberItem(props: { member?: Member }) {
           {props.member?.title}
         </p>
 
-        <p className="text-xl font-bold text-white sm:text-2xl">{props.member?.first_name} {' '} { props.member?.last_name}</p>
-        <p className="text-sm font-medium text-white">{props.member?.denomination}</p>
+        <p className="text-xl font-bold text-white sm:text-2xl">
+          {props.member?.first_name} {props.member?.last_name}
+        </p>
+        <p className="text-sm font-medium text-white">
+          {props.member?.denomination}
+        </p>
 
         <div className="mt-32 sm:mt-48 lg:mt-64">
           <div className="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-            <p className="text-sm text-white">
-              {props.member?.bio}
-            </p>
+            <p className="text-sm text-white">{props.member?.bio}</p>
           </div>
         </div>
       </div>
-    </a>
+    </div>
   )
 }

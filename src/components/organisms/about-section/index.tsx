@@ -109,7 +109,9 @@ export default function AboutSection() {
               message preached on the Alter to be the true Gospel given to us by
               God, through studying the scriptures and also looking back to the
               first century Christians whenever there&apos;s misinterpretation
-              in text. By doing so
+              in text. But also sponsoring believers that intends going into
+              ministry get thorough training in exegetical understanding of the
+              scriptures in a biblical seminary.
             </h4>
           </div>
         </div>

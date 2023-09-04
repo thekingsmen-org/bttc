@@ -8,6 +8,7 @@ import { Inter } from 'next/font/google'
 import classnames from 'classnames'
 import { Member } from '@/contracts'
 import { databases } from '@/clients/appwrite'
+import { Query } from 'appwrite'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,7 +22,8 @@ export default function PeopleSection() {
   const getMembers = async () => {
     const response = await databases.listDocuments(
       `${process.env.NEXT_PUBLIC_DATABASE_ID}`,
-      `${process.env.NEXT_PUBLIC_MEMBERSHIP_COLLECTION_ID}`
+      `${process.env.NEXT_PUBLIC_MEMBERSHIP_COLLECTION_ID}`,
+      [Query.equal('approved', true) /*Query.orderAsc('first_name')*/]
     )
     setPeople(response.documents)
   }
@@ -51,7 +53,7 @@ export default function PeopleSection() {
           <ul className="grid gap-4 mt-8 sm:grid-cols-2 lg:grid-cols-4">
             {people.map((person, i) => (
               <li key={i}>
-                <MemberItem member={{...person}} />
+                <MemberItem member={{ ...person }} />
               </li>
             ))}
           </ul>
