@@ -21,7 +21,7 @@ export default function FooterSection() {
         </p>
 
         <Link
-          href="/contact/write"
+          href="mailto:hello@thecrosscon.com"
           className="mt-8 inline-block rounded-full border text-primary border-primary-600 px-12 py-3 text-sm font-medium text-border-primary-600-600 hover:bg-primary-600 hover:text-white focus:outline-none focus:ring active:bg-primary-500"
         >
           Write US

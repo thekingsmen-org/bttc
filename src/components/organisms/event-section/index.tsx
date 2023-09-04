@@ -25,9 +25,28 @@ export default function EventSection() {
               Event Date/Time
             </span>
             <h3 className="text-3xl text-white font-bold">Add To Calender</h3>
-            <p className="my-6 text-gray-50">
-              W8R8+8Q7, Mbiama-Yenagoa Road, 569101, Yenagoa. Bayelsa, Nigeria.
-            </p>
+            <div className="flex">
+              <p className="text-gray-50 text-[95px] font-black">T</p>
+              <div>
+                <p className="leading-none mt-8 text-gray-50 text-[60px] font-black">
+                  uesday
+                </p>
+                <p className="text-gray-50 leading-none h-0 text-[20px] font-black">
+                  20-12-2023
+                </p>
+              </div>
+            </div>
+            <div className="flex float-right">
+              <p className="text-gray-50 text-[95px] font-black">W</p>
+              <div>
+                <p className="leading-none mt-8 text-gray-50 text-[60px] font-black">
+                  ednesday
+                </p>
+                <p className="text-gray-50 leading-none h-0 text-[20px] font-black">
+                  20-12-2023
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <div className="col-span-2">
