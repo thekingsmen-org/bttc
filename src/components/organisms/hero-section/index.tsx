@@ -1,5 +1,9 @@
 import Link from 'next/link'
+import { Inter } from 'next/font/google'
 import './styles.scss'
+import classnames from 'classnames'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function HeroSection() {
   return (
@@ -26,9 +30,14 @@ export default function HeroSection() {
         <h2 className="text-md font-semibold">MMXXIII</h2>
         <h2 className="text-md font-semibold">DEC 12th - 15th</h2>
       </div>
-      <h1 className="font-['Inter'] mt-32 text-black text-5xl md:text-7xl lg:text-9xl font-black max-w-7xl text-center tracking-widest main-header-text">
-        THE CROSS <span className="bg-black text-white px-4">CONFERENCE</span>{' '}
-        2023
+      <h1
+        className={classnames(
+          "font-['Inter'] mt-32 text-black text-5xl md:text-7xl lg:text-9xl font-black max-w-7xl text-center tracking-widest main-header-text",
+          inter.className
+        )}
+      >
+        <span className="text-bold text-6xl md:text-7xl">THE CROSS</span>{' '}
+        <span className="bg-black text-white px-4">CONFERENCE</span> 2023
       </h1>
       <div className="flex items-center justify-center max-w-2xl">
         <span>
