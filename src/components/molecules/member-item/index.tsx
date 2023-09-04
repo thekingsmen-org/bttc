@@ -8,7 +8,7 @@ export default function MemberItem(props: { member?: Member }) {
   return (
     <div
       className={classNames(
-        'group cursor-pointer relative flex-1 block bg-black max-h-[490px]'
+        'group cursor-pointer relative flex-1 block bg-black max-h-[490px] md:min-h-[490px]'
       )}
     >
       <img
