@@ -3,13 +3,8 @@
 import React from 'react'
 import { Member } from '@/contracts'
 import classNames from 'classnames'
-import { getBucketID, storage } from '@/clients/appwrite'
 
 export default function MemberItem(props: { member: Member }) {
-  const result = !props.member.photo?.startsWith('https://')
-    ? storage.getFileView(getBucketID(), props.member.photo ?? '')
-    : undefined
-
   return (
     <div
       className={classNames(
@@ -18,7 +13,7 @@ export default function MemberItem(props: { member: Member }) {
     >
       <img
         alt={`${props.member.first_name}`}
-        src={result?.toString() ?? `${props.member.photo}`}
+        src={`${props.member.photo}`}
         className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
       />
 
