@@ -18,11 +18,11 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
     : 'order-first md:order-last'
   const imageCs = even ? 'rounded-tr-[120px]' : 'rounded-tl-[120px]'
   const imageWrapperCs = even
-    ? 'pl-0 md:pl-10 lg:pl-40'
-    : 'pr-0 md:pr-10 lg:pr-40'
+    ? 'pl-0 md:pl-10 lg:pl-20 xl:pl-40'
+    : 'pr-0 md:pr-10 lg:pr-20 xl:pr-40'
   const imageWrapperInvertedCs = !even
-    ? 'pl-0 md:pl-10 lg:pl-40'
-    : 'pr-0 md:pr-10 lg:pr-40'
+    ? 'pl-0 md:pl-10 lg:pl-20 xl:pl-40'
+    : 'pr-0 md:pr-10 lg:pr-20 xl:pr-40'
 
   const ItemLink = ({ name, link }: { name: string; link: string }) => (
     <a
