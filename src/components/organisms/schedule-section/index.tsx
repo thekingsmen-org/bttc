@@ -4,6 +4,9 @@ import './styles.module.scss'
 import React from 'react'
 import ContentSection from '@/components/organisms/content-section'
 import classnames from 'classnames'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function ScheduleContent() {
   const items = [
@@ -54,8 +57,9 @@ export default function ScheduleContent() {
         </div>
         <h1
           className={classnames(
-            "leading-3 font-['Inter'] text-5xl md:text-2xl lg:text-5xl",
-            'font-black max-w-5xl text-center tracking-widest main-header-text'
+            'leading-3 text-5xl md:text-2xl lg:text-5xl',
+            'font-black max-w-5xl text-center tracking-widest main-header-text',
+            inter.className
           )}
         >
           SCHEDULE
