@@ -85,7 +85,7 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
       <div>
         <h1
           className={classnames(
-            'lg:leading-3 text-5xl md:text-5xl lg:text-7xl',
+            'md:leading-3 text-5xl md:text-5xl lg:text-7xl',
             'font-black max-w-7xl tracking-widest main-header-text',
             inter.className,
             {
@@ -119,7 +119,7 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
   )
 
   return (
-    <div className="w-full min-h-[90vh] py-10 grid md:grid-cols-2 grid-cols-1 gap-0 lg:gap-4 px-5 md:p-0">
+    <div className="w-full min-h-[90vh] py-10 grid md:grid-cols-2 grid-cols-1 gap-4 px-5 md:p-0">
       <div
         className={classnames(
           'w-full min-h-full flex flex-col justify-center items-center space-y-4',
