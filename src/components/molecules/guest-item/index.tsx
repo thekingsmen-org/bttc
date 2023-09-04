@@ -56,7 +56,7 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
         src={props.guest.photo ?? ''}
         alt={`${props.guest.full_name}`}
         className={classnames(
-          'drop-shadow-2xl backdrop-blur-lg shadow-2xl min-h-[80vh] w-full object-cover',
+          'drop-shadow-2xl backdrop-blur-lg shadow-2xl min-h-[80vh] min-w-[100%] md:w-full object-cover',
           'border-8 border-primary/20 border-solid',
           imageCs,
           inter.className
