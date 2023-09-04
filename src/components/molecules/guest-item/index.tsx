@@ -1,14 +1,16 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import { Guest } from '@/contracts'
 import Image from 'next/image'
 import classnames from 'classnames'
+import { Inter } from 'next/font/google'
 import './styles.module.scss'
+import { getBucketID, storage } from '@/clients/appwrite'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function GuestItem(props: { guest: Guest; index: number }) {
-  const [show, setShow] = useState(false)
-
   const even = isEven(props.index)
   const csLeft = even
     ? 'sm:order-first xs:order-first'
@@ -23,6 +25,10 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
   const imageWrapperInvertedCs = !even
     ? 'pl-0 md:pl-10 lg:pl-40'
     : 'pr-0 md:pr-10 lg:pr-40'
+
+  const result = !props.guest.photo?.startsWith('https://')
+    ? storage.getFileView(getBucketID(), props.guest.photo ?? '')
+    : undefined
 
   const ItemLink = ({ name, link }: { name: string; link: string }) => (
     <a
@@ -53,14 +59,15 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
   const UserImage = () => (
     <div className={imageWrapperCs}>
       <Image
-        src={`${props.guest.photo}`}
+        src={`${result?.toString() ?? props.guest.photo}`}
         alt={`${props.guest.full_name}`}
         width={600}
         height={600}
         className={classnames(
           'drop-shadow-2xl backdrop-blur-lg shadow-2xl min-h-[80vh] w-full object-cover',
           'border-8 border-primary/20 border-solid',
-          imageCs
+          imageCs,
+          inter.className
         )}
       />
     </div>
@@ -88,6 +95,7 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
           className={classnames(
             "md:leading-3 font-['Inter'] text-5xl md:text-5xl lg:text-7xl",
             'font-black max-w-7xl tracking-widest main-header-text',
+            inter.className,
             {
               'text-right': !even,
               'text-left': even,

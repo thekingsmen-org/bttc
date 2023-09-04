@@ -22,6 +22,7 @@ module.exports = {
       'images.ctfassets.net',
       'blogger.googleusercontent.com',
       'cloud.appwrite.io',
+      'api.thecrosscon.com',
     ],
   },
 }
