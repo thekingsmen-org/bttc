@@ -134,10 +134,9 @@ export default function AboutSection() {
                 We believe that Christ died on the Cross as an atonement for the
                 Sins of His people (<strong>Definite Atonement</strong>).{' '}
                 <strong>Definite Atonement</strong> in the sense of a
-                Calvinistic theology as some may categorize it. We believe if we
-                are not given Grace so sin may abide and thus if we should we
-                live a holy life mirroring the Love of God displayed on the
-                Cross.
+                Calvinistic theology as some may categorize it. We believe we
+                are not given Grace so sin may abide and thus we should we live
+                a holy life mirroring the Love of God displayed on the Cross.
               </p>
 
               <p>
