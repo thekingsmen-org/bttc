@@ -21,9 +21,15 @@ export default function HamburgerMenu(props: HamburgerProps) {
 
   return (
     <div
-      className={`absolute top-0 bottom-0 left-0 right-0 overflow-hidden h-screen w-screen bg-primary transform ${
-        props.open ? '-translate-y-0' : '-translate-y-full'
-      } transition-all duration-500 ease-in-out filter`}
+      className={classnames(
+        `absolute top-0 bottom-0 left-0 right-0 overflow-hidden h-screen w-screen bg-primary transform transition-all duration-500 ease-in-out filter`,
+        {
+          '-translate-y-0': props.open,
+          '-translate-y-full': !props.open,
+          'opacity-1': props.open,
+          'opacity-0': !props.open,
+        }
+      )}
     >
       <div
         className="h-screen max-h-screen overflow-hidden justify-center w-full flex flex-col items-center space-y-10"
