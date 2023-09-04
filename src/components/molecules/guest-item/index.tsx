@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { Guest } from '@/contracts'
-import Image from 'next/image'
 import classnames from 'classnames'
 import { Inter } from 'next/font/google'
 import './styles.module.scss'
@@ -53,11 +52,9 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
   // min-w-lg max-w-lg
   const UserImage = () => (
     <div className={imageWrapperCs}>
-      <Image
+      <img
         src={props.guest.photo ?? ''}
         alt={`${props.guest.full_name}`}
-        width={600}
-        height={600}
         className={classnames(
           'drop-shadow-2xl backdrop-blur-lg shadow-2xl min-h-[80vh] w-full object-cover',
           'border-8 border-primary/20 border-solid',
@@ -88,7 +85,7 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
       <div>
         <h1
           className={classnames(
-            "md:leading-3 font-['Inter'] text-5xl md:text-5xl lg:text-7xl",
+            'lg:leading-3 text-5xl md:text-5xl lg:text-7xl',
             'font-black max-w-7xl tracking-widest main-header-text',
             inter.className,
             {
