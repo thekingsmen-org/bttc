@@ -119,7 +119,7 @@ export default function GuestItem(props: { guest: Guest; index: number }) {
   )
 
   return (
-    <div className="w-full min-h-[90vh] py-10 grid md:grid-cols-2 grid-cols-1 gap-4 px-8 md:p-0">
+    <div className="w-full min-h-[90vh] py-10 grid md:grid-cols-2 grid-cols-1 gap-0 lg:gap-4 px-5 md:p-0">
       <div
         className={classnames(
           'w-full min-h-full flex flex-col justify-center items-center space-y-4',
