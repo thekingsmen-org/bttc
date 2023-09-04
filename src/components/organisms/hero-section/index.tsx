@@ -36,7 +36,7 @@ export default function HeroSection() {
           inter.className
         )}
       >
-        <span className="text-bold text-6xll md:text-7xl lg:text-9xl">
+        <span className="text-bold text-6xl md:text-7xl lg:text-9xl">
           THE CROSS
         </span>{' '}
         <span className="bg-black text-white px-4">CONFERENCE</span> 2023
