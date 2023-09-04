@@ -21,22 +21,23 @@ export default function HamburgerMenu(props: HamburgerProps) {
 
   return (
     <div
-      className={`absolute top-0 bottom-0 left-0 h-screen w-screen bg-primary transform ${
+      className={`absolute top-0 bottom-0 left-0 right-0 overflow-hidden h-screen w-screen bg-primary transform ${
         props.open ? '-translate-y-0' : '-translate-y-full'
       } transition-transform duration-500 ease-in-out filter`}
     >
       <div
-        className="h-screen w-full flex flex-col items-center mt-64 space-y-10"
+        className="h-screen max-h-screen overflow-hidden justify-center w-full flex flex-col items-center space-y-10"
         onClick={() => props.setOpen(false)}
       >
         {mobileNavigationLinks.map((link, index) => (
           <Link
             key={index}
             className={classnames(
-              'text-5xl font-bold uppercase tracking-widest',
+              'text-5xl relative transition-all ease-in-out delay-300 font-black uppercase tracking-widest flex',
               inter.className,
               {
-                'border-b-8 border-black': pathname === link.path,
+                'after:h-2 after:bg-black after:w-full after:absolute after:top-12':
+                  pathname === link.path,
               }
             )}
             href={`${link.path}`}

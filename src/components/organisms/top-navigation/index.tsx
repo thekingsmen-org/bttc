@@ -80,9 +80,7 @@ export default function TopNavigation() {
       : // @ts-ignore
         data[`${pathname.replace('/', '')}`] ?? data.home
 
-  const dynBg = {
-    [info.blur]: scroll.scrolled,
-  }
+  const isBlack = info.background === 'bg-black'
 
   return (
     <>
@@ -122,7 +120,7 @@ export default function TopNavigation() {
               )}
             >
               <img
-                src="/logo.png"
+                src={isBlack ? '/logo-white.png' : '/logo.png'}
                 alt="logo"
                 height={scroll.scrolled ? 60 : 80}
                 width={scroll.scrolled ? 160 : 180}
