@@ -7,6 +7,9 @@ import GuestItem from '@/components/molecules/guest-item'
 import classnames from 'classnames'
 import { databases } from '@/clients/appwrite'
 import { Guest } from '@/contracts'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export default function GuestsSection() {
   const [guests, setGuests] = useState<Guest[]>([])
@@ -30,7 +33,8 @@ export default function GuestsSection() {
           <div className="flex items-center justify-center max-w-2xl">
             <p
               className={classnames(
-                'text-xs font-extrabold text-gray-100 font-sans tracking-widest'
+                'text-xs font-extrabold text-gray-100 font-sans tracking-widest',
+                inter.className
               )}
             >
               OUR SPEAKERS, GOSPEL ARTIST AND CHOIR
@@ -39,7 +43,8 @@ export default function GuestsSection() {
           <h1
             className={classnames(
               "md:leading-3 font-['Inter'] text-white text-5xl md:text-5xl lg:text-7xl",
-              'font-black max-w-7xl text-center tracking-widest main-header-text'
+              'font-black max-w-7xl text-center tracking-widest main-header-text',
+              inter.className
             )}
           >
             SPECIAL GUEST
