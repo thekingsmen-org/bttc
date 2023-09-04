@@ -18,6 +18,10 @@ module.exports = {
   },
   transpilePackages: ['jotai-devtools'],
   images: {
-    domains: ['images.ctfassets.net', 'blogger.googleusercontent.com'],
+    domains: [
+      'images.ctfassets.net',
+      'blogger.googleusercontent.com',
+      'cloud.appwrite.io',
+    ],
   },
 }
