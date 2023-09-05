@@ -78,7 +78,7 @@ export default function AboutSection() {
                 </li>
                 <li>
                   <p>
-                    Indirectly through the way we live our live{' '}
+                    Indirectly through the way we live our lives{' '}
                     <a href={getBibleVerLink('rom.10.14-15')} target="_blank">
                       Romans 10:14-15
                     </a>
