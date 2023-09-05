@@ -33,7 +33,7 @@ const data = {
     background: 'bg-black border-gray-300',
     fromBg: 'from-black',
     color: 'text-white',
-    desc: 'Event is sponsored and support by God. We just submit to hiss Sovereign will',
+    desc: 'Event is sponsored and support by God. We just submit to His Sovereign will',
   },
   join: {
     subtitle: 'Touched by God',

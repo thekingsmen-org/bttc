@@ -121,7 +121,12 @@ export default function TopNavigation() {
                 }
               )}
             >
-              Cross Conf
+              <img
+                src="/logo.png"
+                alt="logo"
+                height={scroll.scrolled ? 60 : 80}
+                width={scroll.scrolled ? 160 : 180}
+              />
             </Link>
             <div className="md:block hidden">
               {navigationLinks.map((link, index) => (
